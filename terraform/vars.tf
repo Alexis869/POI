@@ -1,7 +1,7 @@
 variable "project_id" {
   description = "ID du projet GCP"
   type        = string
-  default = "mspr-462120"
+  default = "projetinnovation"
 }
 
 variable "region" {
@@ -19,7 +19,7 @@ variable "zone" {
 variable "instance_name" {
   description = "Nom de l'instance"
   type        = string
-  default     = "vm-terra-packer"
+  default     = "vm-minecraft"
 }
 
 variable "machine_type" {
@@ -31,11 +31,11 @@ variable "machine_type" {
 variable "image_project" {
   description = "Projet contenant l'image packer"
   type        = string
-  default = "mspr-462120"
+  default = "projetinnovation"
 }
 
 variable "image_name" {
   description = "Nom de l'image packer"
   type        = string
-  default = "packer-1750683128"
+  default = "packer-1750881479"
 }
