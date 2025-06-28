@@ -37,5 +37,5 @@ variable "image_project" {
 variable "image_name" {
   description = "Nom de l'image packer"
   type        = string
-  default = "packer-1750881479"
+  default = "debian-12"
 }
