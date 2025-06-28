@@ -38,7 +38,7 @@ jobs:
     - name: Récupérer la clé privée depuis les secrets
       run: |
         mkdir -p ssh
-        echo "${{ secrets.GCP_SSH_KEY }}" > ssh/gcle-gcp-poi
+        echo "${{ secrets.GCP_SSH_KEY }}" > ssh/cle-gcp-poi
         chmod 600 ssh/cle-gcp-poi
 
     - uses: actions/upload-artifact@v4
