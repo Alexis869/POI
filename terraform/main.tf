@@ -5,7 +5,7 @@ resource "google_compute_instance" "vm_from_packer_image" {
 
   boot_disk {
     initialize_params {
-      image = "projects/${var.image_project}/global/images/${var.image_name}"
+      image = "projects/${var.image_project}/global/images/family/${var.image_name}"
     }
   }
 
