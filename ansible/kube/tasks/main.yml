@@ -13,6 +13,11 @@
 - name: Install required packages
   apt:
     name:
+      - bash-completion
+      - wget
+      - vim
+      - python3
+      - curl
       - apt-transport-https
       - ca-certificates
       - curl
