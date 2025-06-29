@@ -1,4 +1,5 @@
 apiVersion: v2
-name: odoo
-description: A Helm chart for deploying Odoo and PostgreSQL
+name: minecraft-server
+description: Deploy Minecraft Server with configurable options (EULA, MEMORY, VERSION, PORT)
 version: 0.1.0
+appVersion: "latest"
