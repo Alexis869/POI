@@ -26,7 +26,7 @@ resource "google_compute_instance" "vm_from_packer_image" {
   EOT
 
   metadata = {
-    ssh-keys = "admin:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM+KPmnHmQyvMA59BSF2Q8kBAtNUficFv6LnhLI4r/IJ github-deploy"
+    ssh-keys = "admin:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVGg8jMFSwwc1G0s4ZxAczHRZNnRJ7UzoI9gC35eA2iYQqZMJSc45LfcIMQypoqlIiqagRQcKw7X9nHir0k2aLGIPDyekeoOny0IZaq0x2zXyIbSTc75SiByHtXNMrEdeenjTbGy6xocV1g8+HGIF/nMdqOCsC3qWyu5Bz0RctbiTNLWFDsPd0SQLTii+xqts/AhB0ok3wj5v9CqCeQf+lDY92+Rqis/eL8Gx3b9O4XhJ5YXGaoh6bt10/e4Ng6wboDIKGKFs49eg8v9Zu/Q04+iFHykDGPKZ4XOHVcEZLSRX64k6VtrKEwcV9jBgOiGR/NhxDoZ/RX0WcUYuFytV/ parsy@Alexis-Home"
   }
 
   tags = ["web"]
