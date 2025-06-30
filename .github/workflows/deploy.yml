@@ -84,19 +84,27 @@ jobs:
     needs: [Ansible]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Récupérer la clé privée depuis les secrets
       run: |
         mkdir -p ssh
         echo "${{ secrets.GCP_SSH_KEY }}" > ssh/cle-gcp-poi
-        chmod 600 ssh/cle-gcp-poi
+        chmod 600 ./ssh/cle-gcp-poi
+
+    - uses: actions/download-artifact@v4
+      with:
+        name: instance_ip
+
+    - name: Load instance IP
+      run: |
+        source instance_ip.env
+        echo "IP récupérée : $INSTANCE_IP"
 
     - name: Deploy Minecraft Server via Helm (SSH)
       run: |
-        ssh -o StrictHostKeyChecking=no -i ssh/cle-gcp-poi admin@${{ env.INSTANCE_IP }} << 'EOF'
-          helm upgrade --install minecraft ~/POI-main/helm/odoo-chart \
+        ssh -o StrictHostKeyChecking=no -i ssh/cle-gcp-poi admin@$INSTANCE_IP << 'EOF'
+          helm upgrade --install minecraft ~/POI-main/helm/minecraft-server \
             --namespace default \
             --set minecraft.eula=TRUE \
             --set minecraft.memory=2G \
