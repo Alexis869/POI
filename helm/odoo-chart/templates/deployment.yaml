@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: minecraft
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.minecraft.port }}
+          env:
+            - name: EULA
+              value: "{{ .Values.minecraft.eula }}"
+            - name: MEMORY
+              value: "{{ .Values.minecraft.memory }}"
+            - name: VERSION
+              value: "{{ .Values.minecraft.version }}"
