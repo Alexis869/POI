@@ -1,5 +1,0 @@
----
-- name: Install Kerberos library dependencies
-  yum:
-    name: krb5-workstation
-    state: present
